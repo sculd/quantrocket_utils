@@ -52,9 +52,13 @@ def get_df_ama(df, alpha_min, alpha_max, beta, gamma):
                 if s == 0:
                     snr = 0
                 else:
-                    snr = pa / (beta * dpos)
+                    snr = pa / s
             elif p < l:
-                snr = -pa / (beta * dneg)
+                s = (beta * dneg)
+                if s == 0:
+                    snr = 0
+                else:
+                    snr = -pa / s
             else:
                 snr = 0
 
